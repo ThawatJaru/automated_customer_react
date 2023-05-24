@@ -1,6 +1,6 @@
 import { loginService } from "../services/api/staff/login";
-import React, { useContext, useState } from "react"
-import { useNavigate } from "react-router-dom";
+import React, { useContext, useState, useEffect } from "react"
+import { Link, useNavigate } from "react-router-dom";
 import { AppContext } from "../appState/store";
 
 function Login() {
@@ -32,11 +32,23 @@ function Login() {
     }
   }
 
+
   const onChangeDataForm = (e) => {
     setDataForm({ ...dataForm, [e.target.name]: e.target.value })
   }
+  useEffect(() => {
+  }, [])
+
   return (
     <>
+      <Link to='/home-customer' className="btn_back_edit_location">
+        <div>
+          <img src="/img/icon/icon_arrow.svg" alt="" width="10" height="10" />
+        </div>
+        <div className="pos_text_back">
+          Back
+        </div>
+      </Link>
       <div className="pos_login">
         <h1 className="login_text">Login</h1>
       </div>

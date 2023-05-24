@@ -5,15 +5,13 @@ import { AppContext } from '../../appState/store'
 
 
 const ProductCard = ({ status, data, onDeletePlant }) => {
-  console.log('%cMyProject%cline:6%cdata', 'color:#fff;background:#ee6f57;padding:3px;border-radius:2px', 'color:#fff;background:#1f3c88;padding:3px;border-radius:2px', 'color:#fff;background:rgb(3, 22, 52);padding:3px;border-radius:2px', data)
   const navigate = useNavigate();
   const { machineId } = useContext(AppContext)
-  console.log('%cMyProject%cline:10%cmachineId', 'color:#fff;background:#ee6f57;padding:3px;border-radius:2px', 'color:#fff;background:#1f3c88;padding:3px;border-radius:2px', 'color:#fff;background:rgb(34, 8, 7);padding:3px;border-radius:2px', machineId)
 
   return (
     <div className={styles.box}
       style={{
-        border: `5px solid ${data.plant_state.name === "pending" ? "#990000" : "none"}`
+        border: `5px solid ${machineId !== data.location.id  ? "#990000" : "none"}`
       }}
     >
       <div style={{

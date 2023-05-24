@@ -3,9 +3,7 @@ import React, { createContext, useState } from 'react'
 export const AppContext = createContext()
 
 const AppProvider = ({ children }) => {
-  const [user, setUser] = useState({
-    id: "00000000-0000-4000-8000-000000000000",
-  })
+  const [user, setUser] = useState()
   const [machineId, setMachineId] = useState()
 
   return (

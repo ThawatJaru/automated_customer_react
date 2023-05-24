@@ -18,20 +18,29 @@ import { webhookPaymentStatus } from './services/api/webhook/index.js';
 import ConfirmPayment from './pages/confirmPayment/[id].js';
 
 function App() {
-    const { user } = useContext(AppContext)
+    const { user, setUser } = useContext(AppContext)
     const navigate = useNavigate();
- 
-    useEffect(() => {
-        if (!user.id) {
-            console.log("please login")
-            // navigate('/')
+    const reLogin = async () => {
+        const data = await localStorage.getItem('user_plant');
+        if(data){
+          setUser(JSON.parse(data))
         }
-    }, [user, navigate])
+      }
+    useEffect(() => {
+        if (!user?.id) {
+            reLogin()
+        }
+        if (!user) {
+            // navigate('/login')
+        }
+        
+    }, [user])
 
     return (
         <>
             <Routes>
-                <Route path='/' element={<Login />} />
+                <Route path='/' element={<HomeCustomer />} />
+                <Route path='/login' element={<Login />} />
                 <Route path='/machine-location' element={<Location />} />
                 <Route path='/plant/:id' element={<PlantDetailPage />} />
                 <Route path='/payment/:id' element={<PaymentPage />} />

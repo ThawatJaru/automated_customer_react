@@ -67,58 +67,74 @@ const PlantDetailPage = () => {
             </div>
           </Link>
           <div>
-            <div>
+            <div
+              style={{
+
+                display: "flex",
+                flexDirection: "column",
+                gap: "20px"
+              }}
+            >
               <div
                 style={{
                   position: "relative",
-                  marginTop:"20px"
+                  marginTop: "20px",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "50px"
                 }}
               >
                 <img src={dataPlant.image} alt="" width="300" height="300" />
-                <div className={`${styles.box_green}`}>
-                  <div>
-                    <div className={`${styles.flex}`}>
+
+                <div className={`${styles.col_box_green}`}>
+                  <h1>Look after your plants</h1>
+                  <div className={`${styles.box_green}`}>
+                    <div>
                       <div className={`${styles.flex}`}>
-                        <div>
-                          <img src="/img/icon/icon_stop_water.png" alt="" width={"40px"} />
-                        </div>
-                        <div>
-                          <div>Watering</div>
-                          <h3>Every {dataPlant.plant_type.watering_period} Days</h3>
-                        </div>
-                      </div>
-                      <div className={`${styles.flex}`}>
-                        <div>
-                          <img src="/img/icon/icon_flower.png" alt="" width={"50px"} />
-                        </div>
-                        <div>
-                          <div>Intensity</div>
-                          <h3>{dataPlant.plant_type.preset.intensity.name}</h3>
-                        </div>
-                      </div>
-                    </div>
-                    <div className={`${styles.flex}`}>
-                      <div style={{ width: "100%" }} >
                         <div className={`${styles.flex}`}>
                           <div>
-                            <img src="/img/icon/icon_sun.png" alt="" width={"50px"} />
+                            <img src="/img/icon/icon_stop_water_green.png" alt="" width={"40px"} />
                           </div>
                           <div>
-                            <div>Light</div>
-                            <h3>{dataPlant.plant_type.preset.lighting.name}</h3>
+                            <div>Watering</div>
+                            <h3>Every {dataPlant.plant_type.watering_period} Days</h3>
                           </div>
                         </div>
-                        <div>
-                          <strong>{dataPlant.plant_type.preset.lighting.description}</strong>
+                        <div className={`${styles.flex}`}>
+                          <div>
+                            <img src="/img/icon/icon_flower_green.png" alt="" width={"50px"} />
+                          </div>
+                          <div>
+                            <div>Intensity</div>
+                            <h3>{dataPlant.plant_type.preset.intensity.name}</h3>
+                          </div>
                         </div>
                       </div>
-                      <div style={{ width: "100%" }} >
-                        <QRCode
-                          size={256}
-                          style={{ height: "auto", width: "150px" }}
-                          value={dataPlant.plant_type.document}
-                          viewBox={`0 0 256 256`}
-                        />
+                      <div className={`${styles.flex}`}>
+                        <div style={{ width: "100%" }} >
+                          <div className={`${styles.flex}`}>
+                            <div>
+                              <img src="/img/icon/icon_sun_green.png" alt="" width={"50px"} />
+                            </div>
+                            <div>
+                              <div>Light</div>
+                              <h3>{dataPlant.plant_type.preset.lighting.name}</h3>
+                            </div>
+                          </div>
+                          <div>
+                            <strong>
+                              {`It must receive ${dataPlant.plant_type.preset.intensity.name} light at ${dataPlant.plant_type.preset.lighting.description}`}
+                            </strong>
+                          </div>
+                        </div>
+                        <div style={{ width: "100%" }} >
+                          <QRCode
+                            size={256}
+                            style={{ height: "auto", width: "150px" }}
+                            value={dataPlant.plant_type.document}
+                            viewBox={`0 0 256 256`}
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -129,7 +145,7 @@ const PlantDetailPage = () => {
               </div>
               <div>
                 <h3>Description</h3>
-                <p className='text_gray'>{dataPlant.plant_type.description}</p>
+                <p className=''>{dataPlant.plant_type.description}</p>
               </div>
               <div>
                 <div>Type: <span><strong>{dataPlant.plant_type.category.name}</strong></span></div>
@@ -143,8 +159,23 @@ const PlantDetailPage = () => {
                 <strong className='text_gray'>Price</strong>
                 <h2>{dataPlant.price} Bath</h2>
               </div>
-              <div>
-                <button className={`${styles.but_green}`} onClick={() => navigate(`/payment/${dataPlant.id}`)}>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: 'column',
+                  alignItems: "center",
+                  gap: "10px"
+                }}
+              >
+                {machineId !== dataPlant.location.id && (
+                  <strong style={{ color: "#DC4747" }} >Suvarnabhumi</strong>
+                )}
+                <button className={`${styles.but_green}`} onClick={() => navigate(`/payment/${dataPlant.id}`)}
+                  style={{
+                    background: `${machineId !== dataPlant.location.id ? "#8f8f8f" : "#0C9B70"}`
+                  }}
+                  disabled={machineId !== dataPlant.location.id ? true : false}
+                >
                   Checkout
                 </button>
               </div>

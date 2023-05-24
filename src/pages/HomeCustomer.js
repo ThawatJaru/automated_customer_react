@@ -9,9 +9,10 @@ import { cat_data } from './ViewPlantType'
 const HomeCustomer = () => {
     const navigate = useNavigate();
 
-    const { machineId } = useContext(AppContext)
+    const { user, machineId } = useContext(AppContext)
     const [dataProductList, setDataProductList] = useState()
     const [catSelected, setCatSelected] = useState("")
+    console.log('%cMyProject%cline:14%ccatSelected', 'color:#fff;background:#ee6f57;padding:3px;border-radius:2px', 'color:#fff;background:#1f3c88;padding:3px;border-radius:2px', 'color:#fff;background:rgb(39, 72, 98);padding:3px;border-radius:2px', catSelected)
     const [loading, setLoading] = useState(false)
     const [payload, setPayload] = useState({
         m_id: machineId,
@@ -54,17 +55,23 @@ const HomeCustomer = () => {
 
     }
     useEffect(() => {
-        getData()
-        if (!machineId) {
+        if (!machineId && user) {
             navigate('/machine-location')
         }
+        getData()
     }, [payload, catSelected])
 
     return (
-        <>
-            <div className="container_all_home_admin">
+        <div
+            style={{
+                filter: user ? "":'grayscale(100%)',
+            }}
+        >
+            <div className="container_all_home_admin"
+
+            >
                 <div className="container_left_home_admin">
-                    <h1 className="plant_manager_home_admin" style={{ fontWeight: "bold" }}>
+                    <h1 className="plant_manager_home_admin" style={{ fontWeight: "bold" }} onClick={() => navigate('/login')}>
                         Discover Your Plant
                     </h1>
                     {/* <div onClick={() => navigate('/')}>
@@ -119,7 +126,7 @@ const HomeCustomer = () => {
                     <div>
                         <div>
                             <img
-                                className={`${catSelected === "ALL" && styles.box_icon_grid}`}
+                                className={`${catSelected === ""  || catSelected === "ALL" ? styles.box_icon_grid:""}`}
                                 src='/img/icon/icon_grid.svg'
                                 alt=''
                             />
@@ -165,12 +172,18 @@ const HomeCustomer = () => {
                 {dataProductList && dataProductList.length > 0 ? (
                     <ProductList data={dataProductList} />
                 ) : (
-                    <div style={{ textAlign: "center", fontSize: "28px", paddingTop: "50px" }} className="text_gray italic">
-                        <div>{loading ? "Loading..." : `Keyword "${payload.search}" can’t be found in any of our shops`}</div>
+                    <div style={{ 
+                        textAlign: "center", 
+                    fontSize: "28px", 
+                    paddingTop: "50px", 
+                    color:`${payload.cat_id && !loading ? "red":""}`,
+                    fontWeight:`${payload.cat_id && !loading ? "bold":""}`,
+                    }} className="text_gray italic">
+                        <div>{loading ? "Loading..." : !payload.cat_id ? `Keyword "${payload.search}" can’t be found in any of our shops`:"No Data Plants Available"}</div>
                     </div>
                 )}
             </div>
-        </>
+        </div>
     )
 }
 
