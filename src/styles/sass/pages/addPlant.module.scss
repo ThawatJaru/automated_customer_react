@@ -1,0 +1,70 @@
+@import "../global.module.scss";
+
+.box_input_img {
+  border: 5px solid $color-greenMain-light;
+  color: $color-greenMain-light;
+  padding: 32px;
+  border-radius: 67px;
+  width: 160px;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.but_select_img {
+  background-color: $color-greenMain;
+  color: white;
+  width: 199.89px;
+  height: 36px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid_form {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 50px;
+  margin-top: 20px;
+}
+
+.flex_col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px
+}
+
+.flex {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.box_detail {
+  background-color: $color-greenMain-bg;
+  border-radius: 40px;
+  padding: 40px;
+
+}
+
+.img_checkbox {
+  position: absolute;
+  left: -40px;
+  top: 4px;
+}
+
+.but_next {
+  position: absolute;
+  width: 225px;
+  height: 76px;
+  right: 0px;
+  bottom: 0px;
+  color: white;
+  font-weight: bold;
+  background: #905DCC;
+  border-radius: 30px;
+  font-size: 32px;
+}

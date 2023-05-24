@@ -1,0 +1,151 @@
+:root {
+  --color-greenMain: #905dcc;
+  --color-greenMain-light: #b253ed;
+  --color-greenMain-dark: #5c3886;
+  --color-greenMain-fade: #9b7dbf;
+  --color-greenMain-bg: #e9dcf8;
+  --color-green: #37a483;
+  --color-green-main: #0C9B70;
+  --color-green-light: #e4f7d7;
+  --color-red: #e12b2b;
+  --color-red-dark: #990000;
+  --color-gray: #8f8f8f;
+  --color-gray-light: #f5f5f5;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  /* display: table-cell;
+    vertical-align:middle; */
+  margin: 0 auto;
+  padding: 3%;
+}
+a {
+  text-decoration: none;
+}
+h1 {
+  font-size: 40px;
+  font-weight: bold;
+  color: black;
+  margin: 0;
+}
+h2 {
+  font-size: 32px;
+  font-weight: bold;
+  color: black;
+  margin: 0;
+}
+h3 {
+  font-size: 28px;
+  font-weight: bold;
+  color: black;
+  margin: 0;
+}
+
+button {
+  outline: none;
+  border: none;
+}
+
+::-webkit-scrollbar {
+  width: 1px;
+  height: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+}
+
+.text_green {
+  color: rgb(0, 212, 7);
+}
+.text_red {
+  color: #e12b2b;
+}
+.italic {
+  font-style: italic;
+}
+.my_gray_checkbox {
+  background-color: white;
+  width: 18px;
+  height: 18px;
+  border-radius: 100%;
+  border: 2px solid #d9d9d9;
+}
+.my_gray_checkbox_active {
+  background-color: #9b7dbf;
+  width: 18px;
+  height: 18px;
+  border-radius: 100%;
+  border: 2px solid black;
+}
+ul {
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+.flex_center {
+  display: flex;
+  align-items: center;
+}
+
+input[type="file"] {
+  opacity: 0; /* make transparent */
+  z-index: -1; /* move under anything else */
+  position: absolute; /* don't let it take up space */
+}
+
+input,
+textarea {
+  outline: none;
+  border: none;
+}
+
+.asterisk:after {
+  content: "*";
+  color: red;
+  margin-left: 5px;
+}
+.mt_10 {
+  margin-top: 20px;
+}
+
+.text_lg {
+  font-size: 20px;
+}
+
+.text_purple {
+  color: var(--color-greenMain);
+}
+.my_but_plus {
+  background: var(--color-greenMain);
+  position: absolute;
+  bottom: 50px;
+  right: 10px;
+  padding: 10px;
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.text_ellipsis{
+  white-space: nowrap; 
+  width: 100px; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
+}
+.but_green{
+  background: var(--color-green-main) ;
+  color: white !important;
+  padding: 5px 20px;
+  border-radius: 20px;
+  width: fit-content;
+  display: flex;
+  gap: 10px;
+}
+.text_gray{
+  color: var(--color-gray);
+}

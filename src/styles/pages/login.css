@@ -1,0 +1,92 @@
+.my_class {
+  color: blue;
+}
+.pos_login {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.pos_plant_logo {
+  text-align: center;
+}
+
+.container_all {
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+  padding: 15px 0px;
+}
+
+.container_items_left {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.container_items_right {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.text_username {
+  font-size: 24px;
+  font-weight: 400px;
+  color: #5b5b5b;
+}
+
+.input_username {
+  font-size: 20px;
+  font-weight: 200px;
+  color: #c2bdbd;
+  border-radius: 20px;
+  border-color: #ba5df3;
+  border-style: solid;
+  border-width: 2px;
+  background-color: white;
+  width: 332px;
+  height: 50px;
+  padding-left: 15px;
+  font-family: "Poppins", sans-serif;
+}
+
+.input_password {
+  font-size: 20px;
+  font-weight: 200px;
+  color: #c2bdbd;
+  border-radius: 20px;
+  border-color: #ba5df3;
+  border-style: solid;
+  border-width: 2px;
+  background-color: white;
+  width: 332px;
+  height: 50px;
+  padding-left: 15px;
+  font-family: "Poppins", sans-serif;
+}
+
+.pos_input_pass {
+  padding-left: 15px;
+}
+
+.pos_input_user {
+  padding-left: 8px;
+}
+
+.pos_btn_login {
+  position: absolute;
+  bottom: 60px;
+  width: 100%;
+  text-align: center;
+}
+
+.btn_login {
+  background-color: #905dcc;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 36px;
+  font-weight: bold;
+  width: 224px;
+  height: 80px;
+}

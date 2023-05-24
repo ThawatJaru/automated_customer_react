@@ -1,0 +1,25 @@
+@import "../global.module.scss";
+
+.box_menu {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  padding: $py-6;
+  align-items: center;
+}
+
+.box_menu_item {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  cursor: pointer;
+}
+
+.box_icon_grid {
+  padding: $p-3 $p-6;
+  background-color: $color-green-light;
+  width: fit-content;
+  height: fit-content;
+  border-radius: $rounded-xl;
+  min-height: 70px;
+}
+

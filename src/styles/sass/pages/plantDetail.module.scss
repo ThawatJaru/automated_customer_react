@@ -1,0 +1,40 @@
+@import "../global.module.scss";
+
+
+.box_price {
+  display: flex;
+  gap: 80px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+}
+.but_green{
+  background: var(--color-green-main) ;
+  color: white;
+  padding: 20px;
+  border-radius: 20px;
+  width: fit-content;
+  display: flex;
+  gap: 10px;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.box_green {
+  background-color: $color-green-light;
+  padding: 40px 40px 40px 40px;
+  border-radius: 50px;
+  position: absolute;
+  right: -50px;
+  z-index: 4;
+  top: 0;
+  width: fit-content;
+}
+
+.flex{
+  display: flex;
+  gap:30px;
+  align-items: center;
+  margin: 8px 0;
+}

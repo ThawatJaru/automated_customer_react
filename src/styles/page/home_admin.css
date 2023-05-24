@@ -1,0 +1,112 @@
+.home_admin_body{
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.plant_manager_home_admin{
+    margin: 0;
+    font-weight: bold;
+    font-size: 35px;
+    color: black;
+}
+
+.container_all_home_admin{
+    display: flex;
+    justify-content: space-between;
+}
+
+.container_left_home_admin{
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.container_right_home_admin{
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.pos_btn_insert_plant_home_admin{
+    display: flex;
+    align-items: center;
+}
+
+.btn_insert_plant_home_admin{
+    width: 191px;
+    height: 45px;
+    border-radius: 50px;
+    border: none;
+    color: white;
+    background-color: #37A483;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    color: #FFFFFF;
+    font-weight: bold;
+    padding: 15px;
+}
+
+.pos_text_insert_home_admin{
+    padding-left: 10px;
+    
+}
+
+.btn_view_type_home_admin{
+    width: 191px;
+    height: 45px;
+    border-radius: 50px;
+    border: none;
+    color: white;
+    background-color: #B253ED;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    color: #FFFFFF;
+    font-weight: bold;
+    padding: 15px;
+}
+
+.Find_location_home_admin{
+    display: flex;
+    align-items: center;
+    background-color: #F5F5F5;
+    padding: 10px;
+    border-radius: 50px;
+    gap: 10px;
+}
+
+.pos_icon_search_home_admin{
+    align-items: center;
+    padding-top: 10px;
+    padding-left: 5px;
+}
+
+.pos_plant_search_home_admin{
+    padding-left: 10px;
+    align-items: center;
+}
+
+.plant_search_home_admin{
+    background-color: #F5F5F5;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif; 
+    color: "#C4C4C4";
+    font-weight: 500px;
+    font-size: 16px;
+    align-items: center;
+}
+
+.pos_text_label_home_admin{
+    margin-top: 15px;
+}
+
+.plant_category_big_container{
+    display: flex;
+    justify-content: space-between;
+    gap : 30px;
+    padding: 5%;
+}

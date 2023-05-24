@@ -1,0 +1,14 @@
+@import "../../global.module.scss";
+
+
+.box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.box_filter_selector {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}

@@ -1,0 +1,50 @@
+@import "../global.module.scss";
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: $p-6;
+  gap: 20px;
+}
+
+.outline_input {
+  border: 3px solid $color-greenMain-light;
+  border-radius: 20px;
+  padding: $p-3;
+  width: 90%;
+  background-color: white;
+  overflow: hidden;
+  ::placeholder{
+    font-weight: bold;
+    font-size: 20px;
+  }
+}
+
+.bg_purple {
+  background: $color-greenMain-bg;
+  padding: 30px;
+  border-radius: 70px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.flex_col {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.but_purple {
+  background: $color-greenMain;
+  color: white;
+  border-radius: 50px;
+  padding: 5px 40px;
+}
+.but_gray {
+  background: $color-gray;
+  border-radius: 50px;
+  padding: 5px 40px;
+}

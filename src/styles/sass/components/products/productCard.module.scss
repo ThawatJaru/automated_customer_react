@@ -1,0 +1,91 @@
+@import "../../global.module.scss";
+
+
+.box {
+  background-color: $color-gray;
+  min-width: 270px;
+  min-height: 355px;
+  border-radius: $rounded-xl;
+  padding: $p-3;
+}
+
+.location {
+  background-color: $color-red;
+  font-weight: bold;
+  width: fit-content;
+  padding: $p-3 $p-6;
+  border-radius: $rounded-xl;
+  font-size: 18px;
+  color: white;
+}
+.sku {
+  background-color: white;
+  font-weight: bold;
+  width: fit-content;
+  padding: $p-3 $p-6;
+  border-radius: $rounded-xl;
+  font-size: 18px;
+}
+
+.box_image {
+  text-align: center;
+  position: relative;
+}
+
+.icon_delete {
+  background-color: $color-red;
+  padding: 5px;
+  border-radius: 100%;
+  overflow: hidden;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.box_price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $color-gray-light;
+  border-radius: $rounded-xl;
+  padding: $p-3;
+  font-weight: bold;
+}
+
+.but_edit {
+  background-color: $color-greenMain-dark;
+  color: white;
+  border-radius: $rounded-full;
+  padding: $p-3;
+  min-width: 100px;
+  font-weight: bold;
+}
+
+.but_black {
+  background-color: black;
+  color: white;
+  border-radius: $rounded-xl;
+  padding: $p-3;
+  min-width: 100px;
+  font-weight: bold;
+}
+
+.but_green {
+  background-color: $color-greenMain;
+  color: white;
+  border-radius: $rounded-xl;
+  padding: $p-3 20px;
+  width: 100px;
+  font-weight: bold;
+  line-height: 130%;
+}
+.text_error{
+  color: $color-red-dark;
+  font-style: italic;
+  font-weight: bold;
+}

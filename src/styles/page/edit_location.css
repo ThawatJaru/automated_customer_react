@@ -1,0 +1,135 @@
+.body_edit_location {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    padding: 5%;
+}
+
+.edit_location_a {
+    text-decoration: none;
+}
+
+.pos_back_btn_edit_location {
+    display: flex;
+    align-items: center;
+}
+
+.btn_back_edit_location {
+    width: 91px;
+    height: 31px;
+    background-color: #9B7DBF;
+    border-radius: 50px;
+    border: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 10px;
+
+}
+
+.edit_location_text {
+    color: black;
+    font-weight: bold;
+    font-size: 28px;
+}
+
+.pos_text_back_edit_location{
+    padding-left: 10px;
+}
+
+.container_all_edit_location {
+    display: grid;
+}
+.big_container_edit_location{
+    padding: 10px 0;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+.container_loc_name_edit_location {
+    padding-top: 30px;
+    padding-left: 30px;
+}
+
+.container_cap_edit_location {
+    padding-top: 30px;
+}
+
+.style_loc_name_edit_location {
+    color: #5B5B5B;
+    font-size: 18px;
+}
+
+.pos_input_loc_edit_location{
+    padding-top: 20px;
+}
+
+.cap_add_edit_location{
+    font-size: 20px;
+    font-weight: 200px;
+    color: #C2BDBD;
+    border-radius: 20px;
+    border-color: #BA5DF3;
+    border-style: solid;
+    background-color: white;
+    width: 82px;
+    height: 50px;
+    font-family: 'Poppins', sans-serif;
+    padding-left: 15px;
+    border-width: 2px;
+}
+
+.loc_name_add_edit_location {
+    font-size: 20px;
+    font-weight: 200px;
+    color: #C2BDBD;
+    border-radius: 20px;
+    border-color: #BA5DF3;
+    border-style: solid;
+    border-width: 2px;
+    background-color: white;
+    width: 403px;
+    height: 50px;
+    padding-left: 15px;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.pos_slots_text_edit_location{
+    padding-left: 10px;
+    color: black;
+    font-size: 20px;
+    font-weight: 300px;
+}
+
+.loc_description_add_edit_location{
+    font-size: 20px;
+    font-weight: 200px;
+    color: #C2BDBD;
+    border-radius: 50px;
+    border-color: #BA5DF3;
+    border-style: solid;
+    background-color: white;
+    width: 760px;
+    height: 203px;
+    padding-left: 30px;
+    padding-top: 20px;
+    border-width: 2px;
+    font-family: 'Poppins', sans-serif;
+}
+.btn_submit_edit_location{
+    background-color: #905DCC;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 22px;
+    font-weight: bold;
+    width: 140px;
+    height: 50px;
+}
+
+.pos_btn_submit_edit_location{
+    position: absolute;
+    bottom: 60px;
+    right: 50px;
+}
+

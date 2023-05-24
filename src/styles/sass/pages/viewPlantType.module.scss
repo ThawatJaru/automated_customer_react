@@ -1,0 +1,33 @@
+@import "../global.module.scss";
+
+.box_header {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.box_list {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  margin: $py-6;
+}
+
+.box_menu {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+  align-items: center;
+}
+
+.box_icon_grid {
+  padding: $p-3;
+  background-color: $color-green-light;
+  width: fit-content;
+  height: fit-content;
+  border-radius: $rounded-xl;
+}
+
+.p {
+  padding: $p-3;
+}
