@@ -13,10 +13,14 @@ import EditLocation from './pages/editLocation/[id].js';
 import EditPlantType from './pages/editPlantType/[id].js';
 import EditPlantPage from './pages/editPlant/[id].js';
 import HomeCustomer from './pages/HomeCustomer.js';
+import PaymentPage from './pages/payment/[id].js';
+import { webhookPaymentStatus } from './services/api/webhook/index.js';
+import ConfirmPayment from './pages/confirmPayment/[id].js';
 
 function App() {
     const { user } = useContext(AppContext)
     const navigate = useNavigate();
+ 
     useEffect(() => {
         if (!user.id) {
             console.log("please login")
@@ -29,17 +33,19 @@ function App() {
             <Routes>
                 <Route path='/' element={<Login />} />
                 <Route path='/machine-location' element={<Location />} />
-                <Route path='/add-location' element={<AddLocation />} />
-                <Route path='/edit-location/:id' element={<EditLocation />} />
-                <Route path='/home-customer' element={<HomeCustomer />} />
-                <Route path='/view-plant-type' element={<ViewPlantType />} />
                 <Route path='/plant/:id' element={<PlantDetailPage />} />
-                <Route path='/insert-plant-slot' element={<AddPlant />} />
-                <Route path='/edit-plant-type/:id' element={<EditPlantType />} />
-                <Route path='/edit-plant/:id' element={<EditPlantPage />} />
+                <Route path='/payment/:id' element={<PaymentPage />} />
+                <Route path='/confirm-payment/:id' element={<ConfirmPayment />} />
+                <Route path='/home-customer' element={<HomeCustomer />} />
+                {/* <Route path='/add-location' element={<AddLocation />} /> */}
+                {/* <Route path='/edit-location/:id' element={<EditLocation />} /> */}
+                {/* <Route path='/view-plant-type' element={<ViewPlantType />} /> */}
+                {/* <Route path='/insert-plant-slot' element={<AddPlant />} /> */}
+                {/* <Route path='/edit-plant-type/:id' element={<EditPlantType />} /> */}
+                {/* <Route path='/edit-plant/:id' element={<EditPlantPage />} />
                 <Route path='/add-plant' element={<AddPlant />} />
                 <Route path='/add-plant-type' element={<AddPlantType />} />
-                <Route path='/confirm-add-plant-slot' element={<ConfirmAddPlant />} />
+                <Route path='/confirm-add-plant-slot' element={<ConfirmAddPlant />} /> */}
             </Routes>
         </>
     )

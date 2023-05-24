@@ -12,7 +12,6 @@ const PlantDetailPage = () => {
   const navigate = useNavigate();
 
   const [dataPlant, setDataPlant] = useState()
-  console.log('%cMyProject%cline:13%cdataPlant', 'color:#fff;background:#ee6f57;padding:3px;border-radius:2px', 'color:#fff;background:#1f3c88;padding:3px;border-radius:2px', 'color:#fff;background:rgb(118, 77, 57);padding:3px;border-radius:2px', dataPlant)
   const [doorStatus, setDoorStatus] = useState(true)
 
   const onGetDataPlant = async () => {
@@ -145,7 +144,7 @@ const PlantDetailPage = () => {
                 <h2>{dataPlant.price} Bath</h2>
               </div>
               <div>
-                <button className={`${styles.but_green}`}>
+                <button className={`${styles.but_green}`} onClick={() => navigate(`/payment/${dataPlant.id}`)}>
                   Checkout
                 </button>
               </div>

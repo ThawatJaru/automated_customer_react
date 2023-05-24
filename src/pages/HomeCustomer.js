@@ -65,7 +65,7 @@ const HomeCustomer = () => {
             <div className="container_all_home_admin">
                 <div className="container_left_home_admin">
                     <h1 className="plant_manager_home_admin" style={{ fontWeight: "bold" }}>
-                    Discover Your Plant
+                        Discover Your Plant
                     </h1>
                     {/* <div onClick={() => navigate('/')}>
                         <img src="/img/plant_manager_logo.svg" alt="" width="45" height="64" />
@@ -165,15 +165,9 @@ const HomeCustomer = () => {
                 {dataProductList && dataProductList.length > 0 ? (
                     <ProductList data={dataProductList} />
                 ) : (
-                    <strong
-                        style={{
-                            display: "flex",
-                            justifyContent: "center",
-                            marginTop: "60px"
-                        }}
-                    >
-                        {loading ? "Loading..." : "No data available"}
-                    </strong>
+                    <div style={{ textAlign: "center", fontSize: "28px", paddingTop: "50px" }} className="text_gray italic">
+                        <div>{loading ? "Loading..." : `Keyword "${payload.search}" can’t be found in any of our shops`}</div>
+                    </div>
                 )}
             </div>
         </>

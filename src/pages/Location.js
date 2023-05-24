@@ -77,8 +77,8 @@ function Location() {
             <LocationItem data={item} />
           </div>
         )) : (
-          <div style={{ textAlign: "center" }}>
-            {loading ? "Loading..." : " No machine location available"}
+          <div style={{ textAlign: "center", fontSize:"28px" }} className="text_gray italic">
+            <div>{loading ? "Loading..." : `Keyword "${textSearch}" can’t be found in any of our shops`}</div>
           </div>
         )}
       </div>

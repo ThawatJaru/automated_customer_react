@@ -40,14 +40,14 @@ const LocationItem = ({ data }) => {
         <button className="btn_submit" onClick={() => onSelectMachine(data.id)}>
           Select
         </button>
-        <Link to={`/edit-location/${data.id}`}>
+        {/* <Link to={`/edit-location/${data.id}`}>
           <button className="btn_edit">
             Edit
           </button>
         </Link>
         <button className="btn_remove" onClick={() => onDelete(data.id)}>
           <img src="img/icon/icon_bin.svg" alt="" width="20" height="20" />
-        </button>
+        </button> */}
       </div>
     </div>
   )
