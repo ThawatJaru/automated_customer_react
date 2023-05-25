@@ -12,7 +12,6 @@ const HomeCustomer = () => {
     const { user, machineId } = useContext(AppContext)
     const [dataProductList, setDataProductList] = useState()
     const [catSelected, setCatSelected] = useState("")
-    console.log('%cMyProject%cline:14%ccatSelected', 'color:#fff;background:#ee6f57;padding:3px;border-radius:2px', 'color:#fff;background:#1f3c88;padding:3px;border-radius:2px', 'color:#fff;background:rgb(39, 72, 98);padding:3px;border-radius:2px', catSelected)
     const [loading, setLoading] = useState(false)
     const [payload, setPayload] = useState({
         m_id: machineId,
@@ -25,9 +24,10 @@ const HomeCustomer = () => {
     const getData = async () => {
         setLoading(true)
         const res = await getAllPlants(payload)
-        setTimeout(() => {
-            if (res) {
-                setDataProductList(res.data)
+        const filter = await res.data.filter((item) => item.location.id === machineId)
+        setTimeout(async () => {
+            if (filter) {
+                setDataProductList(filter)
                 setLoading(false)
             }
         }, 500);
@@ -55,7 +55,7 @@ const HomeCustomer = () => {
 
     }
     useEffect(() => {
-        if (!machineId && user) {
+        if (!machineId || !user) {
             navigate('/machine-location')
         }
         getData()

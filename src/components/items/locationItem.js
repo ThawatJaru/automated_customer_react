@@ -13,6 +13,7 @@ const LocationItem = ({ data }) => {
   }
   const onSelectMachine = async (id) => {
     setMachineId(id)
+    localStorage.setItem('machineId_plant', id);
     navigate('/home-customer')
   }
   return (

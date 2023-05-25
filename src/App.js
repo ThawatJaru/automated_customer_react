@@ -18,8 +18,10 @@ import { webhookPaymentStatus } from './services/api/webhook/index.js';
 import ConfirmPayment from './pages/confirmPayment/[id].js';
 
 function App() {
-    const { user, setUser } = useContext(AppContext)
+    const { user, setUser, setMachineId, machineId} = useContext(AppContext)
+    console.log('%cMyProject%cline:21%cmachineId', 'color:#fff;background:#ee6f57;padding:3px;border-radius:2px', 'color:#fff;background:#1f3c88;padding:3px;border-radius:2px', 'color:#fff;background:rgb(38, 157, 128);padding:3px;border-radius:2px', machineId)
     const navigate = useNavigate();
+    const m_id = localStorage.getItem('machineId_plant');
     const reLogin = async () => {
         const data = await localStorage.getItem('user_plant');
         if(data){
@@ -27,6 +29,7 @@ function App() {
         }
       }
     useEffect(() => {
+        setMachineId(m_id)
         if (!user?.id) {
             reLogin()
         }

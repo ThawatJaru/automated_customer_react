@@ -168,7 +168,7 @@ const PlantDetailPage = () => {
                 }}
               >
                 {machineId !== dataPlant.location.id && (
-                  <strong style={{ color: "#DC4747" }} >Suvarnabhumi</strong>
+                  <strong style={{ color: "#DC4747" }} >{dataPlant.location.name}</strong>
                 )}
                 <button className={`${styles.but_green}`} onClick={() => navigate(`/payment/${dataPlant.id}`)}
                   style={{

@@ -69,7 +69,20 @@ const PaymentPage = () => {
             <h3 className='text_gray'>Price</h3>
             <h2>{dataPayment.price} Bath</h2>
           </div>
-
+          <div>
+                <button 
+                  style={{
+                    fontSize: "30px",
+                    background:"#0C9B70",
+                    color: "white",
+                    padding: "20px",
+                    borderRadius: "10px",
+                  }}
+                  onClick={() => navigate('/home-customer')}
+                >
+                  <strong>Confirm</strong>
+                </button>
+              </div>
           <div
             style={{
               display: 'flex',

@@ -58,6 +58,14 @@ export const plantCloseDoor = async (p_id) => {
     return null;
   }
 }
+export const plantPickup = async (p_id) => {
+  try {
+    const res = await axiosInstance.patch(`/api/signal/request_pick_up/${p_id}`)
+    return res
+  } catch (error) {
+    return null;
+  }
+}
 export const webhookToggleDoor = async (p_id, data) => {
   try {
     const res = await axios.post(`/webhook/door_status/${p_id}`)

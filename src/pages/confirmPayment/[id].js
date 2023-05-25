@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react'
 import styles from '../../styles/sass/pages/confirmAddPlant.module.scss'
 import { useNavigate, useParams } from 'react-router-dom'
-import { getPlants } from '../../services/api/plants'
+import { getPlants, plantPickup } from '../../services/api/plants'
 import { AppContext } from '../../appState/store'
 import QRCode from 'react-qr-code'
 import CountDown from '../../components/items/countDown'
@@ -20,9 +20,13 @@ const ConfirmPayment = () => {
       setDataPlant(data)
     }
   }
+  const onPickup = async () => {
+    await plantPickup(param.id)
+  }
   useEffect(() => {
     if (machineId && param) {
       onGetDataPlant()
+      onPickup()
     } else {
       navigate('/home-customer')
     }
@@ -59,8 +63,34 @@ const ConfirmPayment = () => {
                       </div>
                     </div>
                   </li>
-                  <li>Please put your plant into slot ‘A01’</li>
-                  <li>Please close the door</li>
+                  <li className={`${styles.list_active}`}>
+                    <div className={`${styles.list_item}`}>
+                      <img src="/img/icon/TArrowRight.svg" alt="" width={25}
+                        style={{
+                          position: 'absolute',
+                          left: "-35px",
+                          top: "6px",
+                        }}
+                      />
+                      <div>
+                      Please put your plant into slot ‘A01’
+                      </div>
+                    </div>
+                  </li>
+                  <li className={`${styles.list_active}`}>
+                    <div className={`${styles.list_item}`}>
+                      <img src="/img/icon/TArrowRight.svg" alt="" width={25}
+                        style={{
+                          position: 'absolute',
+                          left: "-35px",
+                          top: "6px",
+                        }}
+                      />
+                      <div>
+                      Please close the door
+                      </div>
+                    </div>
+                  </li>
                 </ul>
               </div>
               <div>
