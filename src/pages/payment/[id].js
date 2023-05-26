@@ -78,7 +78,7 @@ const PaymentPage = () => {
                     padding: "20px",
                     borderRadius: "10px",
                   }}
-                  onClick={() => navigate('/home-customer')}
+                  onClick={() => navigate(`/confirm-payment/${param.id}`)}
                 >
                   <strong>Confirm</strong>
                 </button>
