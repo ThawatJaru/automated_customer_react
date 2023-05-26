@@ -7,13 +7,11 @@ import QRCode from 'react-qr-code'
 import CountDown from '../../components/items/countDown'
 
 const ConfirmPayment = () => {
-  // const { machineId } = useContext(AppContext)
-  const machineId = "1f7d01f8-5bd8-48e8-bd33-08f26f291634"
+  const { machineId } = useContext(AppContext)
   const param = useParams()
   const navigate = useNavigate();
 
   const [dataPlant, setDataPlant] = useState()
-  console.log('%cMyProject%cline:10%cdataPlant', 'color:#fff;background:#ee6f57;padding:3px;border-radius:2px', 'color:#fff;background:#1f3c88;padding:3px;border-radius:2px', 'color:#fff;background:rgb(251, 178, 23);padding:3px;border-radius:2px', dataPlant)
   const onGetDataPlant = async () => {
     const { data } = await getPlants(machineId, param.id)
     if (data) {
