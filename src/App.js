@@ -34,7 +34,7 @@ function App() {
             reLogin()
         }
         if (!user) {
-            // navigate('/login')
+            navigate('/')
         }
         
     }, [user])
