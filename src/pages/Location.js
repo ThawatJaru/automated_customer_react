@@ -83,13 +83,13 @@ function Location() {
         )}
       </div>
 
-      <Link to="/add-location">
+      {/* <Link to="/add-location">
         <div className="pos_plus_btn">
           <button className="btn_add">
             <img src="img/icon/icon_plus.svg" alt="" width="40" height="40" />
           </button>
         </div>
-      </Link>
+      </Link> */}
     </>
   );
 }

@@ -24,10 +24,9 @@ const HomeCustomer = () => {
     const getData = async () => {
         setLoading(true)
         const res = await getAllPlants(payload)
-        const filter = await res.data.filter((item) => item.location.id === machineId)
         setTimeout(async () => {
-            if (filter) {
-                setDataProductList(filter)
+            if (res) {
+                setDataProductList(res.data)
                 setLoading(false)
             }
         }, 500);

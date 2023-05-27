@@ -19,13 +19,13 @@ const ConfirmAddPlant = () => {
             <ul className={`${styles.list}`}>
               <li className={`${styles.list_active}`}>
                 <div className={`${styles.list_item}`}>
-                  <img src="/img/icon/TArrowRight.svg" alt="" width={25}
+                  {/* <img src="/img/icon/TArrowRight.svg" alt="" width={25}
                     style={{
                       position: 'absolute',
                       left: "-35px",
                       top: "6px",
                     }}
-                  />
+                  /> */}
                   <div>
                     Please wait for the door to unlock
                   </div>

@@ -47,15 +47,19 @@ const ConfirmPayment = () => {
             <div className={`${styles.flex_col}`}>
               <div>
                 <ul className={`${styles.list}`}>
-                  <li className={`${styles.list_active}`}>
+                  <li className={``}
+                    style={{
+                      color: "#C4C4C4",
+                    }}
+                  >
                     <div className={`${styles.list_item}`}>
-                      <img src="/img/icon/TArrowRight.svg" alt="" width={25}
+                      {/* <img src="/img/icon/TArrowRight.svg" alt="" width={25}
                         style={{
                           position: 'absolute',
                           left: "-35px",
                           top: "6px",
                         }}
-                      />
+                      /> */}
                       <div>
                         Please wait for the door to unlock
                       </div>
@@ -71,7 +75,7 @@ const ConfirmPayment = () => {
                         }}
                       />
                       <div>
-                      Please put your plant into slot ‘A01’
+                        Please put your plant into slot {dataPlant.slot.slot_code}
                       </div>
                     </div>
                   </li>
@@ -85,7 +89,7 @@ const ConfirmPayment = () => {
                         }}
                       />
                       <div>
-                      Please close the door
+                        Please close the door
                       </div>
                     </div>
                   </li>
@@ -119,7 +123,7 @@ const ConfirmPayment = () => {
             >
               <div>
                 <div
-                  style={{width:"300px", textAlign: "center", fontWeight: "bold",}}
+                  style={{ width: "300px", textAlign: "center", fontWeight: "bold", }}
                   className='text_gray italic'
                 >Automatically return to Home Page
                   in <span>

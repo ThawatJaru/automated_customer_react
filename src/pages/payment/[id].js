@@ -18,16 +18,16 @@ const PaymentPage = () => {
   }
   const checkStatusPayment = async (id) => {
     const res = await webhookPaymentStatus(id)
-    if(res && res.data.transactionId === dataPayment.transactionId ){
+    if (res && res.data.transactionId === dataPayment.transactionId) {
       navigate(`/confirm-payment/${param.id}`)
     }
-}
+  }
 
   useEffect(() => {
     if (param) {
       onGetData(param.id)
     }
-    if(dataPayment?.transactionId){
+    if (dataPayment?.transactionId) {
       checkStatusPayment(dataPayment.transactionId)
     }
   }, [param])
@@ -58,11 +58,16 @@ const PaymentPage = () => {
               borderRadius: "50px",
             }}
           >
-            <QRCode
+            {/* <QRCode
               size={256}
               style={{ height: "auto", width: "350px" }}
               value={dataPayment.payment_qr}
               viewBox={`0 0 256 256`}
+            /> */}
+            <img
+              src={dataPayment.payment_qr}
+              width={350}
+              alt=''
             />
           </div>
           <div>
@@ -70,19 +75,19 @@ const PaymentPage = () => {
             <h2>{dataPayment.price} Bath</h2>
           </div>
           <div>
-                <button 
-                  style={{
-                    fontSize: "30px",
-                    background:"#0C9B70",
-                    color: "white",
-                    padding: "20px",
-                    borderRadius: "10px",
-                  }}
-                  onClick={() => navigate(`/confirm-payment/${param.id}`)}
-                >
-                  <strong>Confirm</strong>
-                </button>
-              </div>
+            <button
+              style={{
+                fontSize: "30px",
+                background: "#0C9B70",
+                color: "white",
+                padding: "20px",
+                borderRadius: "10px",
+              }}
+              onClick={() => navigate(`/confirm-payment/${param.id}`)}
+            >
+              <strong>Confirm</strong>
+            </button>
+          </div>
           <div
             style={{
               display: 'flex',
@@ -121,8 +126,8 @@ const PaymentPage = () => {
             flexDirection: 'column',
             gap: "10px",
             justifyContent: 'center',
-            alignItems:"center",
-            minHeight:"100vh"
+            alignItems: "center",
+            minHeight: "100vh"
           }}
         >
           <strong>No data</strong>

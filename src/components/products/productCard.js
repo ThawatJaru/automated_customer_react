@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import styles from '../../styles/sass/components/products/productCard.module.scss'
 import { useNavigate } from 'react-router-dom'
 import { AppContext } from '../../appState/store'
@@ -8,6 +8,10 @@ const ProductCard = ({ status, data, onDeletePlant }) => {
   const navigate = useNavigate();
   const { machineId } = useContext(AppContext)
 
+  useEffect(() => {
+    
+  }, [data, machineId])
+  
   return (
     <div className={styles.box}
       style={{
