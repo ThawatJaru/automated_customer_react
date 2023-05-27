@@ -20,7 +20,7 @@ function Login() {
     if (!dataForm.username) {
       setError({
         status: true,
-        massage: "Username or Password is incorrect"
+        massage: "Invalid Username or Password."
       })
       return
     }
@@ -29,6 +29,15 @@ function Login() {
       setUser(res.data)
       setLoading(false)
       navigate("/machine-location")
+      setLoading(false)
+
+    } else {
+      setError({
+        status: true,
+        massage: "Invalid Username or Password."
+      })
+      setLoading(false)
+
     }
   }
 
@@ -56,14 +65,7 @@ function Login() {
         <img src="/img/plant_logo.svg" alt="" width="190" height="198" className="pos_img" />
       </div>
       {/* error massage */}
-      <div
-        style={{
-          color: "red",
-          textAlign: "center",
-        }}
-      >
-        {error.status && error.massage}
-      </div>
+
       <form action="" onChange={onChangeDataForm}>
         <div className="container_all_login">
           <div className="container_items_left_login">
@@ -99,6 +101,16 @@ function Login() {
       </form>
 
       <div className="pos_btn_login">
+        <div
+          style={{
+            color: "red",
+            textAlign: "center",
+            marginBottom: "10px",
+            fontWeight: "bold"
+          }}
+        >
+          {error.status && error.massage}
+        </div>
         <button className="btn_login" onClick={() => onLogin(dataForm)}>
           {loading ? "Loading" : "Login"}
         </button>
